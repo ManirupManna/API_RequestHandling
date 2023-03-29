@@ -14,14 +14,20 @@ app.post("/bfhl", (req, res) => {
   const responseObj = {
     is_success: true,
     user_id: "manirup_manna_13062002",
-    email: "manirupmanna13@gmail.com",
+    email: "manirup1163.be20@chitkarauniversity.edu.in",
     roll_number: 2011981163,
-    numbers: [],
+    odd_numbers: [],
+    even_numbers:[],
     alphabets: [],
   };
   array.forEach((item) => {
     let num = parseInt(item);
-    if (num) responseObj.numbers.push(num);
+    if (num) {
+      if(num%2==0)
+        responseObj.even_numbers.push(num);
+      else
+        responseObj.odd_numbers.push(num);
+    }
     else responseObj.alphabets.push(item);
   });
   res.json(responseObj);
