@@ -28,7 +28,7 @@ app.post("/bfhl", (req, res) => {
       else
         responseObj.odd_numbers.push(num);
     }
-    else responseObj.alphabets.push(item);
+    else responseObj.alphabets.push(item.toUpperCase());
   });
   res.json(responseObj);
 });
